@@ -1,6 +1,6 @@
 <template>
     <nav class="nav">
-        <router-link to="/">Main</router-link>
+        <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/faq">FAQ</router-link>
     </nav>
@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: "nav"
+    name: "Nav"
   }
 </script>
 
