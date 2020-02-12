@@ -3,7 +3,7 @@
     <div
             class="card"
             v-for="user in users"
-            :key="userPreview + user.username"
+            :key="user.username + user.email + user.id"
             @click="goToPage(user.id)"
     >
       <h1>{{ user.username }}</h1>
