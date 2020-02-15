@@ -2,11 +2,11 @@
   <div class="body">
     <div
             class="card"
-            v-for="user in users"
-            :key="user.username + user.email + user.id"
-            @click="goToPage(user.id)"
+            v-for="user in getUsers"
+            :key="'userPreview' + user.name.first + user.name.last"
+            @click="goToPage(user.login.username)"
     >
-      <h1>{{ user.username }}</h1>
+      <h1>{{ user.name.first + ' ' + user.name.last }}</h1>
       <h2>{{ user.email }}</h2>
     </div>
   </div>
@@ -18,30 +18,12 @@ export default {
   props: {
     msg: String
   },
-  data() {
-    return {
-      users: [
-        {
-          username: 'Ву Танг',
-          email: 'tang@mail.ru',
-          id: 1,
-        },
-        {
-          username: 'Чанг Cу',
-          email: 'su@mail.ru',
-          id: 2,
-        },
-        {
-          username: 'Брюс Ли',
-          email: 'li@mail.ru',
-          id: 3,
-        },
-        {
-          username: 'Хан Чан',
-          email: 'xan@mail.ru',
-          id: 4,
-        },
-      ]
+  mounted() {
+    this.$store.dispatch('getUsers')
+  },
+  computed: {
+    getUsers() {
+      return this.$store.getters['getUsers']
     }
   },
   methods: {

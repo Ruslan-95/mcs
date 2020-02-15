@@ -1,12 +1,16 @@
 <template>
     <div class="userId">
-        \i am user Id
+        <Body/>
     </div>
 </template>
 
 <script>
+    import Body from '@/components/userId/Body'
   export default {
-    name: "UserId"
+    name: "userId",
+    components: {
+      Body
+    }
   }
 </script>
 
