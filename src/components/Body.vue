@@ -62,4 +62,12 @@ a {
     width: 250px;
     margin: 10px;
   }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
 </style>

@@ -27,7 +27,7 @@ export default new Vuex.Store({
   },
   actions: {
     getUsers({state, commit}) {
-      if(state.users.langth === 0) {
+      if(state.users.length === 0) {
         return axios.get(API_URL + "?results=10")
           .then(res => {
             console.log(state);

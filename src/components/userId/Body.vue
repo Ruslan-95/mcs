@@ -1,10 +1,12 @@
 <template>
-    <div v-if="typeof elem !== 'object'">
+    <div>
         <h5
                 v-for="(elem, index) in user"
                 :key="'persPage' + elem"
         >
-            {{ index + ': ' + elem}}
+            <span v-if="typeof elem !== 'object'">
+                {{ index + ': ' + elem}}
+            </span>
         </h5>
     </div>
 </template>
