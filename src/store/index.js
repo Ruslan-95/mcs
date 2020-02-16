@@ -8,15 +8,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     name: '',
-    users: []
+    users: [],
+    user: []
   },
   getters: {
     getUsers(state) {
       return state.users
     },
-
-    getData(state) {
-      return state.users
+    getUser(state) {
+      return state.user
     }
   },
   mutations: {
@@ -35,6 +35,17 @@ export default new Vuex.Store({
           })
           .catch(err => console.log(err))
       }
+    },
+    getUser({state, commit}) {
+      if(state.users.length === 0) {
+        return axios.get(API_URL)
+          .then(res => {
+            console.log(state);
+            commit('set', {name: 'user', value: res.data.results})
+          })
+          .catch(err => console.log(err))
+      }
+
     }
   }
 });
