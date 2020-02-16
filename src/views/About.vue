@@ -1,16 +1,30 @@
 <template>
-<div id="#about">
-    <h1>About</h1>
-    <button @click="handelClick">Get user</button>
-    <h2>User is:</h2>
-    <p>{{ getName }}</p>
-    <p>{{ getUser.email }}</p>
-    <p>{{ getUser.gender }}</p>
-</div>
+    <div id="#about">
+        <h1>About</h1>
+        <button @click="handelClick">Get user</button>
+        <h2>User is:</h2>
+        <transition name="fade">
+            <div v-show="!ifChanged">
+                <p>{{ getName | uppercase}}</p>
+                <p>{{ getUser.email }}</p>
+                <p>{{ getUser.gender }}</p>
+            </div>
+        </transition>
+    </div>
 </template>
 
 <script>
   export default {
+    data() {
+      return {
+        ifChanged: false
+      }
+    },
+    filters: {
+      uppercase(value) {
+        return value.toUpperCase();
+      }
+    },
     name: "about",
     beforeRouteLeave(to, from, next) {
       const answer = window.confirm('Do u really wanna leave?');
@@ -22,7 +36,11 @@
     },
     methods: {
       handelClick() {
+        this.ifChanged = true;
         return this.$store.dispatch('getUser')
+            .then(() => {
+              this.ifChanged = false;
+        })
       }
     },
     computed: {
@@ -36,10 +54,17 @@
           return ''
         }
       }
-  }
+    }
   }
 </script>
 
 <style scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
 
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+    {
+        opacity: 0;
+    }
 </style>

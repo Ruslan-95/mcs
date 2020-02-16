@@ -6,8 +6,10 @@
 
 <script>
     import Body from "../components/Body";
+    import mixin from "../mixins/mixin";
   export default {
     name: "home",
+    mixins: [mixin],
     components: {
       Body
     }
