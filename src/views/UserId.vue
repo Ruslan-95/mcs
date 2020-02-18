@@ -5,7 +5,8 @@
 </template>
 
 <script>
-    import Body from '@/components/userId/Body'
+  import Body from '@/components/userId/Body'
+
   export default {
     name: "userId",
     components: {

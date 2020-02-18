@@ -1,18 +1,21 @@
 <template>
-    <v-app id="app" >
+    <div id="app" >
         <navigation/>
         <transition name="bounce" mode="out-in">
             <router-view/>
         </transition>
-    </v-app>
+        <vuetify></vuetify>
+    </div>
 </template>
 
 <script>
   import navigation from './components/Nav.vue'
+  import vuetify from 'vuetify'
 
   export default {
     components: {
-      navigation
+      navigation,
+      vuetify
     },
     name: 'app',
   }

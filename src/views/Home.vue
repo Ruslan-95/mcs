@@ -1,12 +1,13 @@
 <template>
-<div class="home">
-    <Body msg="Welcome to vue.js"/>
-</div>
+    <div class="home">
+        <Body msg="Welcome to vue.js"/>
+    </div>
 </template>
 
 <script>
-    import Body from "../components/Body";
-    import mixin from "../mixins/mixin";
+  import Body from "../components/Body";
+  import mixin from "../mixins/mixin";
+
   export default {
     name: "home",
     mixins: [mixin],

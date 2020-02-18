@@ -2,7 +2,7 @@
     <div>
         <h5
                 v-for="(elem, index) in user"
-                :key="'persPage' + elem"
+                :key="index + elem"
         >
             <span v-if="typeof elem !== 'object'">
                 {{ index + ': ' + elem}}

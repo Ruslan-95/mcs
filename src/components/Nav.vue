@@ -3,8 +3,12 @@
         <router-link to="/">
             <v-btn>Home</v-btn>
         </router-link>
-        <router-link to="/about"><v-btn>About</v-btn></router-link>
-        <router-link to="/faq">FAQ</router-link>
+        <router-link to="/about">
+            <v-btn>About</v-btn>
+        </router-link>
+        <router-link to="/faq">
+            <v-btn>FAQ</v-btn>
+        </router-link>
     </nav>
 </template>
 

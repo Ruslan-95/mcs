@@ -1,5 +1,5 @@
 <template>
-    <div id="faq">
+    <div id="app">
         <h1>FAQ</h1>
         <h2>{{ getCounter }}</h2>
     </div>

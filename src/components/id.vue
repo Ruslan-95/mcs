@@ -1,5 +1,5 @@
 <template>
-<h1>{{ getRoute }}</h1>
+    <h1>{{ getRoute }}</h1>
 </template>
 
 <script>

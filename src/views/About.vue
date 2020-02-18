@@ -38,9 +38,9 @@
       handelClick() {
         this.ifChanged = true;
         return this.$store.dispatch('getUser')
-            .then(() => {
-              this.ifChanged = false;
-        })
+          .then(() => {
+            this.ifChanged = false;
+          })
       }
     },
     computed: {
