@@ -1,5 +1,5 @@
 <template>
-    <div id="#about">
+    <v-app id="#about">
         <h1>About</h1>
         <button @click="handelClick">Get user</button>
         <h2>User is:</h2>
@@ -10,7 +10,7 @@
                 <p>{{ getUser.gender }}</p>
             </div>
         </transition>
-    </div>
+    </v-app>
 </template>
 
 <script>

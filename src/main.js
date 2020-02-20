@@ -2,8 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store/index'
-import vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import vuetify from './plugins/vuetify'
+
+Vue.use(vuetify);
 
 new Vue({
   vuetify,
@@ -11,4 +12,3 @@ new Vue({
   render: h => h(App),
   store
 }).$mount('#app');
-Vue.use(vuetify);
