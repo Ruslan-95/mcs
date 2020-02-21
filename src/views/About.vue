@@ -5,9 +5,10 @@
         <h2>User is:</h2>
         <transition name="fade">
             <div v-show="!ifChanged">
-                <p>{{ getName | uppercase}}</p>
-                <p>{{ getUser.email }}</p>
-                <p>{{ getUser.gender }}</p>
+                <p>{{ getUser[0].name.first + ' ' + getUser[0].name.last }}</p>
+                <p>{{ getUser[0].email }}</p>
+                <p>{{ getUser[0].gender }}</p>
+                <p>{{ getUser[0].phone }}</p>
             </div>
         </transition>
     </v-app>
@@ -49,7 +50,7 @@
       },
       getName() {
         if(this.getUser.name) {
-          return this.getUser.name.first + ' ' + this.getUser.name.last
+          return this.getUser[0].name.first + ' ' + this.getUser[0].name.last
         } else {
           return ''
         }

@@ -1,6 +1,5 @@
 <template>
     <v-app id="app" >
-        <Vuetify/>
         <navigation/>
         <transition name="bounce" mode="out-in">
             <router-view/>
@@ -10,12 +9,10 @@
 
 <script>
   import navigation from './components/Nav.vue'
-  import Vuetify from 'vuetify'
 
   export default {
     components: {
       navigation,
-      Vuetify
     },
     name: 'app',
   }
